@@ -16,6 +16,7 @@ function Button({
     <button
       onClick={onClick}
       className={`btn ${btnType[variant]} ${className}`}
+      
       {...rest}
     >
       {children}

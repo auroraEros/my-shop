@@ -2,6 +2,8 @@ import localFont from "next/font/local";
 import "./_styles/globals.css";
 import Header from "./_components/Header";
 import ReactQueryProvider from "./providers/ReactQueryProvider";
+import { Toaster } from "react-hot-toast";
+import { PhonNumberProvider } from "./_context/PhoneNumberContext";
 
 const vazirFont = localFont({
   src: [
@@ -49,8 +51,23 @@ export default function RootLayout({ children }) {
     <html lang="fa" dir="rtl" suppressHydrationWarning>
       <body className={`${vazirFont.variable} font-sans min-h-screen `}>
         <ReactQueryProvider>
+          <PhonNumberProvider>
+
+         
           <Header />
-          <main className="flex justify-center  items-center bg-secondary-100 min-h-screen">{children}</main>
+          <main className="flex   bg-secondary-100 min-h-screen">
+            {children}
+          </main>
+          <Toaster
+            position="top-center"
+            toastOptions={{
+              style: {
+                direction: "rtl",
+                fontFamily: "var(--font-vazir)",
+              },
+            }}
+          />
+           </PhonNumberProvider>
         </ReactQueryProvider>
       </body>
     </html>

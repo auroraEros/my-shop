@@ -2,7 +2,7 @@ import Link from "next/link";
 
 function Header() {
   return (
-    <header className=" p-4 shadow-md text-secondary-800">
+    <header className=" p-4 boxShadow text-secondary-800">
       <nav className="container">
         <ul className=" container flex justify-between items-center [&>li]:hover:text-secondary-600">
           <li >
